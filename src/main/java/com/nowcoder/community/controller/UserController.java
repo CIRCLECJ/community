@@ -87,7 +87,7 @@ public class UserController {
     }
 
     @RequestMapping(path = "/header/{fileName}", method = RequestMethod.GET)
-    public void getHeader(@PathVariable("fileName") String fileName, HttpServletResponse response) {
+    public void getHeader(@PathVariable("fileName") String fileName, HttpServletResponse response) {//由用户
         // 服务器存放路径
         fileName = uploadPath + "/" + fileName;
         // 文件后缀
