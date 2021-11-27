@@ -18,4 +18,6 @@ public interface DiscussPostMapper {
     // 如果我需要动态的拼一个条件，并且这个方法有且只有这一个条件，这时参数必须取别名
     int selectDiscussPostRows(@Param("userId") int userId);
 
+
+    int insertDiscussPost(DiscussPost discussPost);
 }
