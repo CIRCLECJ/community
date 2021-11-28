@@ -35,7 +35,7 @@ public class RedisKeyUtil {
         return PREFIX_FOLLOWER + SPLIT + entityType + SPLIT + entityId;
     }
 
-    // 登录验证码
+    // 登录验证码（owner：用户的一个临时使用凭证，因为当前还没有登录无法获取userid，因此用这种方法标识一下用户）
     public static String getKaptchaKey(String owner) {
         return PREFIX_KAPTCHA + SPLIT + owner;
     }
