@@ -29,4 +29,16 @@ public interface MessageMapper {
     // 修改消息的状态（给多条消息设置状态，例如点进私信详情后把这个会话所有的私信都改成已读；另外改成删除也可以用它）
     int updateStatus(List<Integer> ids, int status);
 
+    // 查询某个主题下最新的通知
+    Message selectLatestNotice(int userId, String topic);
+
+    // 查询某个主题所包含的通知数量
+    int selectNoticeCount(int userId, String topic);
+
+    // 查询未读的通知的数量(这里在语句中加个if，如果不传topic，查询的就是所有的未读通知数量)
+    int selectNoticeUnreadCount(int userId, String topic);
+
+    // 查询某个主题所包含的通知列表
+    List<Message> selectNotices(int userId, String topic, int offset, int limit);
+
 }

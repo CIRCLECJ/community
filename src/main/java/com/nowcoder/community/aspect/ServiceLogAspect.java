@@ -32,6 +32,9 @@ public class ServiceLogAspect {
         //首先用户的ip怎么获取，可以通过request获取，但是在这个方法里怎么获取request对象呢
         // 不能在方法传参的地方写，我们可以用RequestContextHolder这个工具类
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        if(attributes==null){
+            return;
+        }
         HttpServletRequest request = attributes.getRequest();
         String ip = request.getRemoteHost();
         String now = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
