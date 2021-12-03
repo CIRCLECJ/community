@@ -3,10 +3,12 @@ package com.nowcoder.community.dao;
 import com.nowcoder.community.entity.DiscussPost;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Mapper
+@Repository
 public interface DiscussPostMapper {
     //可以搜所有帖子也可以搜我的帖子(通过if判断实现)
     // 后两个参数是分页用的，offset是起始行号，limit是每一页最多显示多少行数据
