@@ -18,7 +18,9 @@ public class Event {
     }
 
     //作用见commentController 触发评论事件
-    //这样把set的返回值改成event是为了使用方便，可以用返回的event来set其他属性(以后会处理很多事件，你就知道这样的便捷之处了)
+    //这样把set的返回值改成event是为了使用方便，可以用返回的event来set其他属性
+    // (以后会处理很多事件，你就知道这样的便捷之处了)
+    //它的作用是set值，那为什么不用构造器呢，因为可能我们只需要其中的一部分值，用这种方式就可以需要什么就set什么
     public Event setTopic(String topic) {
         this.topic = topic;
         return this;

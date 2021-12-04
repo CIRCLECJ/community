@@ -66,4 +66,10 @@ public class HomeController {
         return "/error/500";
     }
 
+    //Security部分权限不足时重定向至此
+    @RequestMapping(path = "/denied", method = RequestMethod.GET)
+    public String getDeniedPage() {
+        return "/error/404";
+    }
+
 }
