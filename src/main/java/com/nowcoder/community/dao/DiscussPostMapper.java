@@ -12,7 +12,7 @@ import java.util.List;
 public interface DiscussPostMapper {
     //可以搜所有帖子也可以搜我的帖子(通过if判断实现)
     // 后两个参数是分页用的，offset是起始行号，limit是每一页最多显示多少行数据
-    List<DiscussPost> selectDiscussPosts(int userId, int offset, int limit);
+    List<DiscussPost> selectDiscussPosts(int userId, int offset, int limit, int orderMode);//默认值0就是按原先的排序，1为按热度排
 
     //查询帖子的行数
     // @Param注解用于给参数取别名,
@@ -30,4 +30,7 @@ public interface DiscussPostMapper {
     int updateType(int id, int type);
 
     int updateStatus(int id, int status);
+
+    int updateScore(int id, double score);
+
 }
